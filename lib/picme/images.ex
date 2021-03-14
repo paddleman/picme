@@ -7,6 +7,7 @@ defmodule Picme.Images do
   alias Picme.Repo
 
   alias Picme.Images.Image
+  alias Picme.Images.ExifInfo
 
   @doc """
   Returns the list of images.
@@ -50,9 +51,11 @@ defmodule Picme.Images do
 
   """
   def create_image(attrs \\ %{}) do
+
     %Image{}
     |> Image.changeset(attrs)
     |> Repo.insert()
+
   end
 
   @doc """
